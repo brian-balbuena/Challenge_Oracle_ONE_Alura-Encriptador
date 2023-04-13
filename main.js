@@ -12,6 +12,8 @@ function encriptador() {
     // saco la cantidad de caracteres que tiene el string 
     let numCaracter = textEntrada.length;
     console.log(typeof numCaracter);
+    // creo una nueva variable donde alojo el mensaje encriptado para no sobreescribir el mensaje original 
+    let mensajeEncriptado = mensaje;
 
     // variables para cada vocal 
     let encripA = "ai";
@@ -22,25 +24,25 @@ function encriptador() {
 
     // recorro el vector y usando if cambio las vocales 
     for (var i = 0; i < numCaracter; i++) {
-        if (mensaje[i] == "a") {
-            mensaje[i] = encripA;
-        } else if (mensaje[i] == "e") {
-            mensaje[i] = encripE;
-        } else if (mensaje[i] == "i") {
-            mensaje[i] = encripI;
+        if (mensajeEncriptado[i] == "a") {
+            mensajeEncriptado[i] = encripA;
+        } else if (mensajeEncriptado[i] == "e") {
+            mensajeEncriptado[i] = encripE;
+        } else if (mensajeEncriptado[i] == "i") {
+            mensajeEncriptado[i] = encripI;
         } else if (mensaje[i] == "o") {
-            mensaje[i] = encripO;
+            mensajeEncriptado[i] = encripO;
         } else if (mensaje[i] == "u") {
-            mensaje[i] = encripU;
+            mensajeEncriptado[i] = encripU;
         }
-        console.log(mensaje[i]);
+        console.log(mensajeEncriptado[i]);
     }
 
 
     // recorro el vector y lo muestro en la pantalla 
     for (let i = 0; i < numCaracter; i++) {
         // con .join("") logro sacar las "," que se ponen por defecto  
-        document.getElementById("visor_mensaje").value = mensaje.join("");
+        document.getElementById("visor_mensaje").value = mensajeEncriptado.join("");
     }
 
     document.getElementById("text_entrada").value = '';
