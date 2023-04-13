@@ -42,9 +42,15 @@ function encriptador() {
         // con .join("") logro sacar las "," que se ponen por defecto  
         document.getElementById("visor_mensaje").value = mensaje.join("");
     }
+
+    document.getElementById("text_entrada").value = '';
 }
 let buttonEncriptar = document.getElementById("encriptar");
 buttonEncriptar.onclick = encriptador
+
+function desencriptar(){
+
+}
 
 
 function copiarTexto() {
