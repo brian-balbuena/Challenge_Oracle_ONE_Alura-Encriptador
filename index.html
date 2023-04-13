@@ -27,7 +27,7 @@
     </section>
 
     <section class="hero">
-        <textarea class="text_entrada container" name="mensaje" id="" cols="40" rows="10"></textarea>
+        <textarea class="container" name="mensaje" id="text_entrada" cols="60" rows="10"></textarea>
     </section>
 
     <section class="comandos">
@@ -37,24 +37,22 @@
                 <path
                     d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.553.553 0 0 1-1.1 0L7.1 4.995z" />
             </svg>
-            <span id="comandos_text">Solo letras minúsculas y sin acentos</span>
+            <span id="comandos_text">Solo letras minúsculas y sin tildes</span>
         </div>
 
         <div id="botones">
-            <button class="botones_accion">Encriptar</button>
+            <button id="encriptar" class="botones_accion">Encriptar</button>
             <button class="botones_accion">Desencriptar</button>
-            
-           
         </div>
 
     </section>
 
     <section class="traductor">
         <div id="traductor_texto">
-            <textarea class="text_salida container" name="mensajeTraducido" id="" cols="30" rows="10"></textarea>
+            <textarea class="text_salida container" name="mensajeTraducido" id="visor_mensaje" cols="30" rows="10"></textarea>
             <button class="botones_accion" id="botones_copy">Copiar</button>
         </div>
-       
+
         <div id="traductor_alet">
 
         </div>
@@ -92,7 +90,7 @@
 
 
 
-
+<script src="./main.js"></script>
 </body>
 
 </html>
