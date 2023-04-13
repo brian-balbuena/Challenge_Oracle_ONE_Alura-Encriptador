@@ -1,0 +1,145 @@
+/* reset  */
+* {
+    margin: 0;
+}
+
+textarea {
+    background-color: #33332d;
+    color: #fff;
+    padding-top: 15px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 80px 4fr 0.7fr 1fr;
+    background-color: #33332d;
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+
+/* header  */
+
+.header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo_img {
+    width: 31.9px;
+    height: 48px;
+    position: absolute;
+    left: 2%;
+}
+
+
+/* hero  */
+
+.hero {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: center;
+    justify-self: center;
+}
+
+/* .text_entrada {
+
+} */
+
+.comandos {
+    display: flex;
+    grid-column: 1/2;
+    grid-row: 3/4;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.botones_accion {
+    width: 200px;
+    height: 40px;
+    background-color: #33332d;
+    color: #fff;
+}
+
+.comandos_alert {
+    display: flex;
+    position: relative;
+    right: 30%;
+}
+
+#comandos_text {
+    font-size: 0.6rem;
+}
+
+#botones {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+#botones_copy {
+    position: relative;
+  bottom: 12px;
+    z-index: 1;
+}
+
+
+
+
+/* traductor */
+
+.traductor {
+    grid-column: 2/3;
+    grid-row: 1/4;
+    justify-self: center;
+    display: flex;
+    padding-top: 5%;
+
+}
+
+#traductor_texto {
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.text_salida {
+    width: 400px;
+    height: 650px;
+}
+
+/* footer */
+
+footer {
+    grid-column: 1/3;
+    grid-row: 4/5;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.separador {
+    width: 50%;
+    height: 1.5px;
+    background-color: #fff;
+}
+
+.footer_logos {
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+}
+
+.footer_logos a {
+   color: #fff;
+}
