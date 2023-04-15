@@ -1,9 +1,16 @@
 let textEntrada = document.getElementById("text_entrada");
 textEntrada.focus();
 
+// variables para cada vocal 
+let encripA = "ai";
+let encripE = "enter";
+let encripI = "imes";
+let encripO = "ober";
+let encripU = "ufat";
 
-
+// funcion para encriptar 
 function encriptador() {
+    // capturo el contenido del textarea 
     let textEntrada = document.getElementById("text_entrada").value;
     console.log(textEntrada);
     // separo cada caracter del string dentro de un vector
@@ -15,12 +22,7 @@ function encriptador() {
     // creo una nueva variable donde alojo el mensaje encriptado para no sobreescribir el mensaje original 
     let mensajeEncriptado = mensaje;
 
-    // variables para cada vocal 
-    let encripA = "ai";
-    let encripE = "enter";
-    let encripI = "imes";
-    let encripO = "ober";
-    let encripU = "ufat";
+
 
     // recorro el vector y usando if cambio las vocales 
     for (var i = 0; i < numCaracter; i++) {
@@ -40,19 +42,72 @@ function encriptador() {
 
 
     // recorro el vector y lo muestro en la pantalla 
-    for (let i = 0; i < numCaracter; i++) {
+    for (var i = 0; i < numCaracter; i++) {
         // con .join("") logro sacar las "," que se ponen por defecto  
         document.getElementById("visor_mensaje").value = mensajeEncriptado.join("");
     }
-
+    // reseteo la pantalla donde se ingresa el mensaje 
     document.getElementById("text_entrada").value = '';
 }
+// asigno el botto encriptar 
 let buttonEncriptar = document.getElementById("encriptar");
+// cuando se clickea llama a la funcion encriptar 
 buttonEncriptar.onclick = encriptador
 
-function desencriptar(){
+// funcion desencriptar 
+function desencriptar() {
+    // reseto la pantalla donde se muestra el mensaje 
+    document.getElementById("visor_mensaje").value = '';
+    // capturo el contenido del textarea 
+    let textEntrada = document.getElementById("text_entrada").value;
+    console.log(textEntrada);
+    // separo cada caracter del string dentro de un vector
+    let mensaje = textEntrada.split('');
+    console.log(mensaje);
+    // saco la cantidad de caracteres que tiene el string 
+    let numCaracter = textEntrada.length;
+    console.log(numCaracter);
 
+    // contador de caracteres que se le agrega a cada vocal 
+    let agregadoA = encripA.length;
+    let agregadoE = encripE.length;
+    let agregadoI = encripI.length;
+    let agregadoO = encripO.length;
+    let agregadoU = encripU.length;
+    console.log(agregadoA);
+
+    // para mejorar el mantenimiento del codigo, aca lee la cantidad de caracteres que agrega en cada vocal 
+    let desencriptarA = agregadoA - 1;
+    let desencriptarE = agregadoE - 1;
+    let desencriptarI = agregadoI - 1;
+    let desencriptarO = agregadoO - 1;
+    let desencriptarU = agregadoU - 1;
+    console.log(desencriptarA);
+
+    // recorro el vector y desencripto el mensaje 
+    for (var i = 0; i < numCaracter; i++) {
+        if (mensaje[i] == "a") {
+            mensaje.splice((i+1), desencriptarA);
+        } else if (mensaje[i] == "e") {
+            mensaje.splice((i+1), desencriptarE);
+        } else if (mensaje[i] == "i") {
+            mensaje.splice((i+1), desencriptarI);
+        } else if (mensaje[i] == "o") {
+            mensaje.splice((i+1), desencriptarO);
+        } else if (mensaje[i] == "u") {
+            mensaje.splice((i+1), desencriptarU);
+        }
+
+    }
+
+    // recorro el vector y lo muestro en la pantalla 
+    for (var i = 0; i < numCaracter; i++) {
+        // con .join("") logro sacar las "," que se ponen por defecto  
+        document.getElementById("visor_mensaje").value = mensaje.join("");
+    }
 }
+let buttonDesencriptar = document.getElementById("desencriptar");
+buttonDesencriptar.onclick = desencriptar
 
 
 function copiarTexto() {
