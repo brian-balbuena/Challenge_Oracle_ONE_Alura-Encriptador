@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -27,7 +30,7 @@
     </section>
 
     <section class="hero">
-        <textarea class="container" name="mensaje" id="text_entrada" cols="60" rows="20"></textarea>
+        <textarea class="container" name="mensaje" id="text_entrada" cols="60" rows="20" placeholder="Ingrese el texto aqui"></textarea>
     </section>
 
     <section class="comandos">
@@ -50,13 +53,18 @@
     <section class="traductor">
         <div id="traductor_texto">
             <textarea class="text_salida container" name="mensajeTraducido" id="visor_mensaje" cols="30"
-                rows="10"></textarea>
-            <button class="botones_accion" id="botones_copy">Copiar</button>
+            rows="10"></textarea>
         </div>
+    </section>
 
-        <div id="traductor_alet">
-
+    <section id="traductor_alert">
+        <div id="alert">
+            <p>Ingrese el texto que quiera encriptar o desencriptar.</p>
         </div>
+    </section>
+
+    <section id="copy">
+        <button class="botones_accion" id="botones_copy">Copiar</button>
     </section>
 
 

@@ -10,6 +10,8 @@ let encripU = "ufat";
 
 // funcion para encriptar 
 function encriptador() {
+      // limpio la pantalla del traductor 
+      document.getElementById("traductor_alert").style.display = "none";
     // capturo el contenido del textarea 
     let textEntrada = document.getElementById("text_entrada").value;
     console.log(textEntrada);
@@ -48,6 +50,9 @@ function encriptador() {
     }
     // reseteo la pantalla donde se ingresa el mensaje 
     document.getElementById("text_entrada").value = '';
+
+    // aparece boton copy 
+    document.getElementById("copy").style.display="inline";
 }
 // asigno el botto encriptar 
 let buttonEncriptar = document.getElementById("encriptar");
@@ -56,6 +61,8 @@ buttonEncriptar.onclick = encriptador
 
 // funcion desencriptar 
 function desencriptar() {
+    // limpio la pantalla del traductor 
+    document.getElementById("traductor_alert").style.display = "none";
     // reseto la pantalla donde se muestra el mensaje 
     document.getElementById("visor_mensaje").value = '';
     // capturo el contenido del textarea 
@@ -105,11 +112,14 @@ function desencriptar() {
         // con .join("") logro sacar las "," que se ponen por defecto  
         document.getElementById("visor_mensaje").value = mensaje.join("");
     }
+
+    // aparece boton copy 
+    document.getElementById("copy").style.display="inline";
 }
 let buttonDesencriptar = document.getElementById("desencriptar");
 buttonDesencriptar.onclick = desencriptar
 
-
+// boton copiar 
 function copiarTexto() {
     let textarea = document.getElementById("visor_mensaje");
 
@@ -119,9 +129,6 @@ function copiarTexto() {
 
     // Copia el texto seleccionado al portapapeles del usuario
     document.execCommand("copy");
-
-    // Deselecciona el texto
-    textarea.blur();
 }
 
 let buttonCopy = document.getElementById("botones_copy");
