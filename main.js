@@ -10,8 +10,8 @@ let encripU = "ufat";
 
 // funcion para encriptar 
 function encriptador() {
-      // limpio la pantalla del traductor 
-      document.getElementById("traductor_alert").style.display = "none";
+    // limpio la pantalla del traductor 
+    document.getElementById("traductor_alert").style.display = "none";
     // capturo el contenido del textarea 
     let textEntrada = document.getElementById("text_entrada").value;
     console.log(textEntrada);
@@ -48,11 +48,10 @@ function encriptador() {
         // con .join("") logro sacar las "," que se ponen por defecto  
         document.getElementById("visor_mensaje").value = mensajeEncriptado.join("");
     }
-    // reseteo la pantalla donde se ingresa el mensaje 
-    document.getElementById("text_entrada").value = '';
+
 
     // aparece boton copy 
-    document.getElementById("copy").style.display="inline";
+    document.getElementById("copy").style.display = "inline";
 }
 // asigno el botto encriptar 
 let buttonEncriptar = document.getElementById("encriptar");
@@ -94,15 +93,15 @@ function desencriptar() {
     // recorro el vector y desencripto el mensaje 
     for (var i = 0; i < numCaracter; i++) {
         if (mensaje[i] == "a") {
-            mensaje.splice((i+1), desencriptarA);
+            mensaje.splice((i + 1), desencriptarA);
         } else if (mensaje[i] == "e") {
-            mensaje.splice((i+1), desencriptarE);
+            mensaje.splice((i + 1), desencriptarE);
         } else if (mensaje[i] == "i") {
-            mensaje.splice((i+1), desencriptarI);
+            mensaje.splice((i + 1), desencriptarI);
         } else if (mensaje[i] == "o") {
-            mensaje.splice((i+1), desencriptarO);
+            mensaje.splice((i + 1), desencriptarO);
         } else if (mensaje[i] == "u") {
-            mensaje.splice((i+1), desencriptarU);
+            mensaje.splice((i + 1), desencriptarU);
         }
 
     }
@@ -114,7 +113,7 @@ function desencriptar() {
     }
 
     // aparece boton copy 
-    document.getElementById("copy").style.display="inline";
+    document.getElementById("copy").style.display = "inline";
 }
 let buttonDesencriptar = document.getElementById("desencriptar");
 buttonDesencriptar.onclick = desencriptar
@@ -129,6 +128,9 @@ function copiarTexto() {
 
     // Copia el texto seleccionado al portapapeles del usuario
     document.execCommand("copy");
+
+    // reseteo la pantalla donde se ingresa el mensaje 
+    document.getElementById("text_entrada").value = '';
 }
 
 let buttonCopy = document.getElementById("botones_copy");
